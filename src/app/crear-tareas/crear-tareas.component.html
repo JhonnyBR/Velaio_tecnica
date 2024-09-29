@@ -1,0 +1,37 @@
+<div class="flex flex-wrap" style="height: 80vh;">
+    <p-fieldset legend="Crear Tareas" class="col-6">
+        <div class="p-grid">
+            <div class="col-m3 mb-4">
+                <span class="p-float-label">
+                    <input pInputText id="nameTask" [style]="{'width': '70%'}">
+                    <label for="nameTask">Nombre de la tarea</label>
+                </span>
+            </div>
+            <div class="col-m3 mb-4">
+                <span class="p-float-label">
+                    <p-calendar pTooltip="yyyy-mm-dd" id="limitDate" tooltipPosition="left" [showIcon]="true"
+                        [showButtonBar]="true" dateFormat="yyyy-mm-dd"></p-calendar>
+                    <label for="limitDate">Fecha Limite</label>
+                </span>
+            </div>
+            <div class="pb-5">
+                <label>Personas asociadas</label>
+            </div>
+            <div class="col-m3 mb-4">
+                <span class="p-float-label">
+                    <p-dropdown id="name" styleClass="w-5"></p-dropdown>
+                    <label for="name">Persona</label>
+                </span>
+            </div>
+            <div class="col-m3 mb-4">
+                <span class="p-float-label">
+                    <p-inputNumber  id="age" [style]="{'width': '70%'}" [min]="18"></p-inputNumber>
+                    <label for="age">Edad</label>
+                </span>
+            </div>
+            <div class="pb-2">
+                <label>Habilidades</label>
+            </div>
+        </div>
+    </p-fieldset>
+</div>

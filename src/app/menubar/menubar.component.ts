@@ -14,7 +14,8 @@ export class MenubarComponent implements OnInit {
     this.items = [
       {
         label: 'Home',
-        icon: 'pi pi-fw pi-home'
+        icon: 'pi pi-fw pi-home',
+        routerLink: '/'
       }, 
       {
         label: 'Tareas',
@@ -22,7 +23,8 @@ export class MenubarComponent implements OnInit {
         items: [
           {
             label: "Crear",
-            icon: 'pi pi-fw pi-check'
+            icon: 'pi pi-fw pi-check',
+            routerLink: 'create-taks'
           }
         ]
       }

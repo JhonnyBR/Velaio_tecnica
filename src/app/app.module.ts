@@ -14,12 +14,19 @@ import { DividerModule } from 'primeng/divider';
 import { MenubarComponent } from './menubar/menubar.component';
 import { MenubarModule } from 'primeng/menubar';
 import { CardModule } from 'primeng/card';
+import { CrearTareasComponent } from './crear-tareas/crear-tareas.component';
+import { FieldsetModule } from 'primeng/fieldset';
+import { DropdownModule } from 'primeng/dropdown';
+import { InputTextModule } from 'primeng/inputtext';
+import { CalendarModule } from 'primeng/calendar';
+import { InputNumberModule } from 'primeng/inputnumber';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    MenubarComponent
+    MenubarComponent,
+    CrearTareasComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +36,12 @@ import { CardModule } from 'primeng/card';
     ImageModule,
     DividerModule,
     MenubarModule,
-    CardModule
+    CardModule,
+    FieldsetModule,
+    DropdownModule,
+    InputTextModule,
+    CalendarModule,
+    InputNumberModule
   ],
   providers: [],
   bootstrap: [AppComponent]
