@@ -99,7 +99,7 @@ export class CrearTareasComponent implements OnInit {
         this.task.get('limitDate')?.setValue(formatDate(this.task.value.limitDate, 'yyyy-MM-dd', 'en-US'));
         const convertedObject = {
           date: this.task.value.limitDate,
-          nane: this.task.value.nametask,
+          name: this.task.value.nametask,
           responsible: this.responsibleForTask.map((id: number) => ({ id }))
         };
         const result = this.taskService.addTask(convertedObject);

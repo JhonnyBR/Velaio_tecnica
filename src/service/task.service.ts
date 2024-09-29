@@ -35,7 +35,7 @@ export class TaskService {
     if (this.taskExists(newTask)) {
       return 'La tarea ya existe.';
     }
-    const newKey = this.tasks.length > 0 ? this.tasks[this.tasks.length - 1].key + 1 : 1; // Generar nuevo key
+    const newKey = this.tasks.length > 0 ? this.tasks[this.tasks.length - 1].key + 1 : 1;
     this.tasks.push({ ...newTask, key: newKey });
     return null;
   }

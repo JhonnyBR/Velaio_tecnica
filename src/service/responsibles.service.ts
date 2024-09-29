@@ -54,8 +54,8 @@ export class ResponsiblesService {
     return this.responsibles;
   }
 
-  addSkill(responsibleId: number, skillId: number): string | null{
-    const responsible =  this.responsibles.find(r => r.key === responsibleId);
+  addSkill(responsibleId: number, skillId: number): string | null {
+    const responsible = this.responsibles.find(r => r.key === responsibleId);
     const allSkills = this.skillsService.getSkills();
 
     if (!allSkills.some(skill => skill.key === skillId)) {
@@ -64,10 +64,15 @@ export class ResponsiblesService {
 
     if (responsible && !responsible.skill.some(s => s.id === skillId)) {
       responsible.skill.push({ id: skillId });
-      return null; 
+      return null;
     }
 
     return `El usuario${responsibleId} ya cuenta con la habilidad asignada.`;
   }
-  
+
+  getResponsibleNameById(id: number): string | undefined {
+    const responsible = this.responsibles.find(r => r.key === id);
+    return responsible ? responsible.name : undefined;
+  }
+
 }

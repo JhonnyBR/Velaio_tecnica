@@ -4,7 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-
+import { ConsultarTareasComponent } from './consultar-tareas/consultar-tareas.component';
+import { CrearTareasComponent } from './crear-tareas/crear-tareas.component';
 //dependencias
 
 import { NgxSpinnerComponent, NgxSpinnerModule } from "ngx-spinner";
@@ -14,7 +15,6 @@ import { DividerModule } from 'primeng/divider';
 import { MenubarComponent } from './menubar/menubar.component';
 import { MenubarModule } from 'primeng/menubar';
 import { CardModule } from 'primeng/card';
-import { CrearTareasComponent } from './crear-tareas/crear-tareas.component';
 import { FieldsetModule } from 'primeng/fieldset';
 import { DropdownModule } from 'primeng/dropdown';
 import { InputTextModule } from 'primeng/inputtext';
@@ -24,14 +24,15 @@ import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
 import { ToastModule } from 'primeng/toast';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { TableModule } from 'primeng/table';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     MenubarComponent,
-    CrearTareasComponent
+    CrearTareasComponent,
+    ConsultarTareasComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +51,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ButtonModule,
     DialogModule,
     ToastModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

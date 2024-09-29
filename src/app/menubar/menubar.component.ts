@@ -25,6 +25,11 @@ export class MenubarComponent implements OnInit {
             label: "Crear",
             icon: 'pi pi-fw pi-check',
             routerLink: 'create-taks'
+          },
+          {
+            label: "Consultar",
+            icon: 'pi pi-fw pi-search',
+            routerLink: 'search-task'
           }
         ]
       }
