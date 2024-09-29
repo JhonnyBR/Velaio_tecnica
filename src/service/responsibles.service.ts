@@ -15,7 +15,7 @@ export class ResponsiblesService {
       age: 20,
       skill: [
         {
-          id: 0
+          id: 5
         },
         {
           id: 2
@@ -28,7 +28,7 @@ export class ResponsiblesService {
       age: 25,
       skill: [
         {
-          id: 0
+          id: 6
         },
         {
           id: 3

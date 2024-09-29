@@ -1,15 +1,16 @@
 <div class="flex flex-wrap" style="height: 80vh;">
     <p-fieldset legend="Crear Tareas" class="col">
+        <form [formGroup]="task">
         <div class="p-grid">
             <div class="col-m3 mb-4">
                 <span class="p-float-label">
-                    <input pInputText id="nameTask" [style]="{'width': '70%'}">
+                    <input pInputText formControlName="nametask" id="nameTask" [style]="{'width': '70%'}">
                     <label for="nameTask">Nombre de la tarea</label>
                 </span>
             </div>
             <div class="col-m3 mb-4">
                 <span class="p-float-label">
-                    <p-calendar pTooltip="yyyy-mm-dd" id="limitDate" tooltipPosition="left" [showIcon]="true"
+                    <p-calendar pTooltip="yyyy-mm-dd" formControlName="limitDate" id="limitDate" tooltipPosition="left" [showIcon]="true"
                         [showButtonBar]="true" dateFormat="yyyy-mm-dd"></p-calendar>
                     <label for="limitDate">Fecha Limite</label>
                 </span>
@@ -24,13 +25,7 @@
                     <label for="name">Persona</label>
                 </span>
             </div>
-            <div class="col-m3 mb-4">
-                <span class="p-float-label">
-                    <p-inputNumber id="age" [style]="{'width': '70%'}" [min]="18"></p-inputNumber>
-                    <label for="age">Edad</label>
-                </span>
-            </div>
-            <div class="pb-2">
+            <div *ngIf="skillsForWorker.length != 0" class="pb-2 flex justify-content-center">
                 <label>Habilidades</label>
             </div>
             <div *ngIf="skillsForWorker.length != 0" class="flex justify-content-center flex-wrap">
@@ -38,17 +33,38 @@
                     class="flex align-items-center justify-content-center  h-4rem bg-primary font-bold border-round m-2 px-5">
                     {{skill.description}}
                 </div>
-                <button pButton pRipple label="Añadir" icon="pi pi-plus" iconPos="right"
+                <button pButton pRipple label="Añadir habilidad" icon="pi pi-plus" iconPos="right"
                     class="p-button-success flex align-items-center justify-content-center  h-4rem bg-primary font-bold border-round m-2 px-5"
                     (click)="getSkills()">
                 </button>
             </div>
+            <div *ngIf="skillsForWorker.length != 0" class="pb-2 flex justify-content-center">
+                <label>Acciones</label>
+            </div>
+            <div *ngIf="skillsForWorker.length != 0" class=" pb-2 flex justify-content-center flex-wrap">
+
+                <button pButton pRipple label="Asignar" icon="pi pi-plus" iconPos="right"
+                    class="p-button-success flex align-items-center justify-content-center  h-4rem  font-bold border-round m-2 px-5"
+                    (click)="assign()">
+                </button>
+                <button pButton pRipple label="Remover" icon="pi pi-minus" severity="danger" iconPos="right"
+                    class="p-button-danger flex align-items-center justify-content-center  h-4rem  font-bold border-round m-2 px-5"
+                    (click)="deallocate()">
+                </button>
+            </div>
+            <div class="flex justify-content-center ">
+                <button pButton pRipple label="Guardar" icon="pi pi-check" iconPos="right"
+                    class="p-button-info flex align-items-center justify-content-center  h-4rem  font-bold border-round m-2 px-5"
+                    (click)="create()">
+                </button>
+            </div>
         </div>
+    </form>
     </p-fieldset>
     <p-dialog header="Añadir Habilidad" [modal]="true" [(visible)]="visibleNewSkill" [style]="{ width: '25rem' }">
         <span class="p-text-secondary block mb-5">Añadir nueva habilidad</span>
-        <p-dropdown [options]="skills" [optionLabel]="'description'"  styleClass="w-8"
-                        placeholder="Select a skill" (onChange)="addSkill($event)" appendTo="body"></p-dropdown>
+        <p-dropdown [options]="skills" [optionLabel]="'description'" styleClass="w-8" placeholder="Select a skill"
+            (onChange)="addSkill($event)" appendTo="body"></p-dropdown>
     </p-dialog>
 </div>
 <p-toast></p-toast>

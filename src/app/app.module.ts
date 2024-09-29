@@ -23,6 +23,8 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
 import { ToastModule } from 'primeng/toast';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -47,7 +49,8 @@ import { ToastModule } from 'primeng/toast';
     InputNumberModule,
     ButtonModule,
     DialogModule,
-    ToastModule
+    ToastModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -10,22 +10,22 @@ export class SkillsService {
   getSkills() {
     return [
       {
-        key: 0,
+        key: 1,
         description: 'Angular'
       }, {
-        key: 1,
+        key: 2,
         description: 'Node'
       }, {
-        key: 2,
+        key: 3,
         description: 'PHP'
       }, {
-        key: 3,
+        key: 4,
         description: 'MSServer'
       }, {
-        key: 4,
+        key: 5,
         description: 'Java'
       }, {
-        key: 5,
+        key: 6,
         description: 'Python'
       }
     ];
