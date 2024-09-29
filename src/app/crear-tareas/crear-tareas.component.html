@@ -1,5 +1,5 @@
 <div class="flex flex-wrap" style="height: 80vh;">
-    <p-fieldset legend="Crear Tareas" class="col-6">
+    <p-fieldset legend="Crear Tareas" class="col">
         <div class="p-grid">
             <div class="col-m3 mb-4">
                 <span class="p-float-label">
@@ -19,19 +19,36 @@
             </div>
             <div class="col-m3 mb-4">
                 <span class="p-float-label">
-                    <p-dropdown id="name" styleClass="w-5"></p-dropdown>
+                    <p-dropdown [options]="responsibles" [optionLabel]="'name'" id="name" styleClass="w-5"
+                        placeholder="Select a worker" (onChange)="getSkillsByWorker($event)"></p-dropdown>
                     <label for="name">Persona</label>
                 </span>
             </div>
             <div class="col-m3 mb-4">
                 <span class="p-float-label">
-                    <p-inputNumber  id="age" [style]="{'width': '70%'}" [min]="18"></p-inputNumber>
+                    <p-inputNumber id="age" [style]="{'width': '70%'}" [min]="18"></p-inputNumber>
                     <label for="age">Edad</label>
                 </span>
             </div>
             <div class="pb-2">
                 <label>Habilidades</label>
             </div>
+            <div *ngIf="skillsForWorker.length != 0" class="flex justify-content-center flex-wrap">
+                <div *ngFor="let skill of skillsForWorker"
+                    class="flex align-items-center justify-content-center  h-4rem bg-primary font-bold border-round m-2 px-5">
+                    {{skill.description}}
+                </div>
+                <button pButton pRipple label="Añadir" icon="pi pi-plus" iconPos="right"
+                    class="p-button-success flex align-items-center justify-content-center  h-4rem bg-primary font-bold border-round m-2 px-5"
+                    (click)="getSkills()">
+                </button>
+            </div>
         </div>
     </p-fieldset>
+    <p-dialog header="Añadir Habilidad" [modal]="true" [(visible)]="visibleNewSkill" [style]="{ width: '25rem' }">
+        <span class="p-text-secondary block mb-5">Añadir nueva habilidad</span>
+        <p-dropdown [options]="skills" [optionLabel]="'description'"  styleClass="w-8"
+                        placeholder="Select a skill" (onChange)="addSkill($event)" appendTo="body"></p-dropdown>
+    </p-dialog>
 </div>
+<p-toast></p-toast>
