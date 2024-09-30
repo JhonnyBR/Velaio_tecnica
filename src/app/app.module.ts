@@ -25,6 +25,9 @@ import { DialogModule } from 'primeng/dialog';
 import { ToastModule } from 'primeng/toast';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TableModule } from 'primeng/table';
+import { UsersComponent } from './users/users.component';
+import { MultiSelectModule } from 'primeng/multiselect';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +35,8 @@ import { TableModule } from 'primeng/table';
     HomeComponent,
     MenubarComponent,
     CrearTareasComponent,
-    ConsultarTareasComponent
+    ConsultarTareasComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +56,8 @@ import { TableModule } from 'primeng/table';
     DialogModule,
     ToastModule,
     ReactiveFormsModule,
-    TableModule
+    TableModule,
+    MultiSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

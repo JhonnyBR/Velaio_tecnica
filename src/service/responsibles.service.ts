@@ -75,4 +75,26 @@ export class ResponsiblesService {
     return responsible ? responsible.name : undefined;
   }
 
+
+  addResponsible(newResponsible: { name: string; age: number; skill: { id: number }[] }): string {
+    try {
+      const exists = this.responsibles.some(r => r.name === newResponsible.name);
+      if(exists){
+        return "Usuario existente";
+      }else{
+        const newId = this.responsibles.length ? this.responsibles[this.responsibles.length - 1].key + 1 : 1;
+      const responsibleToAdd = {
+        key: newId,
+        ...newResponsible
+      };
+      
+      this.responsibles.push(responsibleToAdd);
+      return "Creado";
+      }
+    } catch (error) {
+      return "" + error;
+    }
+  }
+
+
 }

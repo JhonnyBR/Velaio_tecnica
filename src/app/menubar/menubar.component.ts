@@ -32,6 +32,11 @@ export class MenubarComponent implements OnInit {
             routerLink: 'search-task'
           }
         ]
+      },
+      {
+        label: "Workers",
+        icon: "pi pi-fw pi-user",
+        routerLink: 'workers'
       }
     ]
   }
